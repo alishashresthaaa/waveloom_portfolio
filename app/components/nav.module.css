@@ -1,0 +1,33 @@
+.navContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  position: relative;
+}
+
+.navContainer::before {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 100%;
+  background-color: var(--secondary-color);
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.navContainer .navItem {
+  margin-right: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--dimmed-text);
+  border: none;
+  padding: unset;
+}
+
+.navContainer .navItem:hover,
+.navContainer .activeNav {
+  color: var(--white-color);
+}

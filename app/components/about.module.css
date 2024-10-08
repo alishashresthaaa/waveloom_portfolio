@@ -1,0 +1,153 @@
+.subtitle {
+  color: var(--secondary-color);
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+@media screen and (max-width: 460px) {
+  .container {
+    font-size: 14px;
+  }
+}
+
+.title {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.light {
+  color: var(--white-color);
+  display: block;
+  font-size: 62px;
+  margin-bottom: -12px;
+}
+
+@media screen and (max-width: 460px) {
+  .light {
+    font-size: 42px;
+  }
+}
+
+.secondary {
+  color: var(--secondary-color);
+  display: block;
+  font-size: 82px;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 460px) {
+  .secondary {
+    font-size: 48px;
+  }
+}
+
+.details {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--dimmed-text);
+  margin-bottom: 10px;
+  width: 80%;
+}
+
+@media screen and (max-width: 1024px) {
+  .detatils {
+    width: 100%;
+    font-size: 12px;
+  }
+}
+
+.icons {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.icons a img {
+  width: 32px;
+  height: 32px;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1024px) {
+  .icons a img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.icons a img:hover {
+  filter: brightness(2);
+  transform: translateY(-2px);
+}
+
+.divider {
+  background-color: var(--secondary-color);
+  height: 1px;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.logo {
+  font-size: 72px;
+  color: var(--secondary-color);
+  font-weight: 700;
+  position: absolute;
+  top: 5%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1024px) {
+  .logo {
+    position: unset;
+    top: unset;
+    transform: unset;
+    font-size: 62px;
+  }
+}
+
+.logo:hover {
+  transform: rotate(-15deg);
+}
+
+.about {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media screen and (max-width: 1024px) {
+  .about {
+    position: unset;
+    top: unset;
+    transform: unset;
+    margin-top: 30px;
+  }
+}
+
+.secondaryText{
+  color: var(--secondary-color);
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.secondaryText::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background-color: var(--secondary-color);
+  transition: width 0.3s ease;
+}
+
+.secondaryText:hover::after {
+  width: 100%;
+}
