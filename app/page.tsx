@@ -5,6 +5,8 @@ import Nav from "./components/nav.component";
 import MainComponent from "./components/main.component";
 import { useRef } from "react";
 
+export const runtime = "edge";
+
 export default function Home() {
   const aboutMeRef = useRef<HTMLDivElement>(null);
   const techStackRef = useRef<HTMLDivElement>(null);
