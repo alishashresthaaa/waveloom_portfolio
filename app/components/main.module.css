@@ -28,6 +28,8 @@
   position: relative;
   width: max-content;
   margin-bottom: 12px;
+  animation: letterSpacingAnimation 1s ease-out;
+  animation-delay: 0.5s;
 }
 
 @media screen and (max-width: 475px) {
@@ -337,4 +339,18 @@
 
 .secondaryText:hover {
   color: var(--secondary-color);
+}
+
+
+@keyframes letterSpacingAnimation {
+  from {
+    letter-spacing: 15px;
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    letter-spacing: 1.8px;
+    transform: translateX(0);
+    opacity: 1;
+  }
 }

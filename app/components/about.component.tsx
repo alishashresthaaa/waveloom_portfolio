@@ -11,7 +11,10 @@ const About = () => {
       <h1 className={styles.logo}>A.</h1>
       <div className={styles.about}>
         <h3 className={styles.subtitle}>Hello there, I am</h3>
-        <h1 className={styles.title}></h1>
+        <h1 className={styles.title}>
+          <span className={styles.light}>Alisha</span>
+          <span className={styles.secondary}>Shrestha.</span>
+        </h1>
         <p className={styles.details}>
           <span className={styles.quote}>Thank you!</span> For finding me here.
         </p>
