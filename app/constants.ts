@@ -34,11 +34,11 @@ export const myWorks: Array<{ title: string; description: string; link: string; 
     stacks: ["HTML", "SCSS", "Javascript", "Jquery"],
   },
   {
-    title: "E-commerce",
-    description: "An e-commerce website that sells various products.",
+    title: "Quizzer",
+    description: "A quiz website where users can take quiz and get their score.",
     link: "github.com",
     image: one.src,
-    stacks: ["React", "Redux", "TypeScript", "SCSS"],
+    stacks: ["HTML", "CSS", "Python", "Django", "SQLite3"],
   },
   {
     title: "Blog",
