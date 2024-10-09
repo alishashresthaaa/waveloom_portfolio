@@ -10,6 +10,7 @@ import nextIcon from "@/app/icons/next.svg";
 import jwt from "@/app/icons/jwt.svg";
 import git from "@/app/icons/git.svg";
 import one from "@/app/icons/1.jpg";
+import mytunes from "@/app/works/mytunes.png";
 
 export const techStacks: Array<{ src: string; alt: string }> = [
   { src: html, alt: "HTML" },
@@ -25,13 +26,14 @@ export const techStacks: Array<{ src: string; alt: string }> = [
   { src: git, alt: "Git" },
 ];
 
-export const myWorks: Array<{ title: string; description: string; link: string; image: string; stacks: Array<string> }> = [
+export const myWorks: Array<{ title: string; description: string; link: string; image: string; stacks: Array<string>; websiteLink?: string }> = [
   {
     title: "Website",
-    description: "An multipage website that showcase the playlist of songs.",
-    link: "github.com",
-    image: one.src,
+    description: "A static ecommerce website that showcase the cart functionality",
+    link: "https://github.com/alishashresthaaa/static-ecommerce-website",
+    image: mytunes.src,
     stacks: ["HTML", "SCSS", "Javascript", "Jquery"],
+    websiteLink: "https://fe-mytunes.pages.dev/",
   },
   {
     title: "Quizzer",

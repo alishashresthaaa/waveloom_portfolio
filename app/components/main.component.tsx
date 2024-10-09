@@ -40,9 +40,9 @@ const MainComponent = (props: MainComponentProps) => {
         <div className={styles.workList}>
           {myWorks.map((work, index) => (
             <div key={work.title} className={styles.workContainer}>
-              <div className={styles.workImageContainer}>
+              <a href={work.websiteLink} target="_blank" rel="noopener noreferrer" className={styles.workImageContainer}>
                 <Image src={work.image} alt={work.title} className={styles.workImage} width={1000} height={1000} />
-              </div>
+              </a>
               <div className={styles.workDetails}>
                 <h4 className={styles.workTitle}>
                   <span className={styles.workIndex}>#{index + 1 > 9 ? index + 1 : `0${index + 1}`} </span>
