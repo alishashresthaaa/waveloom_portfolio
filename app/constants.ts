@@ -27,11 +27,11 @@ export const techStacks: Array<{ src: string; alt: string }> = [
 
 export const myWorks: Array<{ title: string; description: string; link: string; image: string; stacks: Array<string> }> = [
   {
-    title: "Portfolio",
-    description: "A portfolio website that showcases my works, skills, and experiences.",
+    title: "Website",
+    description: "An multipage website that showcase the playlist of songs.",
     link: "github.com",
     image: one.src,
-    stacks: ["React", "Next.js", "TypeScript", "SCSS"],
+    stacks: ["HTML", "SCSS", "Javascript", "Jquery"],
   },
   {
     title: "E-commerce",
