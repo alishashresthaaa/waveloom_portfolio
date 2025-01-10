@@ -19,9 +19,10 @@ const MainComponent = (props: MainComponentProps) => {
         <p className={styles.subtitle}>
           I`ve been coding for 3 years now and working as a <b>Frontend Developer who focuses on Frontend Architecture, Web Development, & Design Practices.</b>
         </p>
-        <p className={styles.subtitle}>
+        <p className={styles.subtitle}>I am a team player, design enthusiast and like building user centric applications. I am always looking for new opportunities to learn and grow.</p>
+        {/* <p className={styles.subtitle}>
           Currently, I am working on <b>Python, Django, Backend Development, and other similar subjects.</b>
-        </p>
+        </p> */}
       </div>
 
       <div className={styles.container} ref={techStackRef}>

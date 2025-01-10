@@ -2,7 +2,7 @@ import html from "@/app/icons/html.svg";
 import css from "@/app/icons/css.svg";
 import js from "@/app/icons/js.svg";
 import ts from "@/app/icons/ts.svg";
-import py from "@/app/icons/py.svg";
+// import py from "@/app/icons/py.svg";
 import scss from "@/app/icons/scss.svg";
 import react from "@/app/icons/react.svg";
 import redux from "@/app/icons/redux.svg";
@@ -22,7 +22,7 @@ export const techStacks: Array<{ src: string; alt: string }> = [
   { src: redux, alt: "Redux" },
   { src: nextIcon, alt: "Next.js" },
   { src: jwt, alt: "JWT" },
-  { src: py, alt: "Python" },
+  // { src: py, alt: "Python" },
   { src: git, alt: "Git" },
 ];
 
@@ -42,18 +42,18 @@ export const myWorks: Array<{ title: string; description: string; link: string; 
     image: one.src,
     stacks: ["HTML", "CSS", "Python", "Django", "SQLite3"],
   },
-  {
-    title: "Blog",
-    description: "A blog website where users can read and write articles.",
-    link: "github.com",
-    image: one.src,
-    stacks: ["React", "Redux", "TypeScript", "SCSS"],
-  },
-  {
-    title: "Social Media",
-    description: "A social media website where users can connect with each other.",
-    link: "github.com",
-    image: one.src,
-    stacks: ["React", "Redux", "TypeScript", "SCSS"],
-  },
+  // {
+  //   title: "Blog",
+  //   description: "A blog website where users can read and write articles.",
+  //   link: "github.com",
+  //   image: one.src,
+  //   stacks: ["React", "Redux", "TypeScript", "SCSS"],
+  // },
+  // {
+  //   title: "Social Media",
+  //   description: "A social media website where users can connect with each other.",
+  //   link: "github.com",
+  //   image: one.src,
+  //   stacks: ["React", "Redux", "TypeScript", "SCSS"],
+  // },
 ];
