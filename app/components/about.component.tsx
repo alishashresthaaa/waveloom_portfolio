@@ -22,7 +22,7 @@ const About = () => {
         <p className={styles.details}>Experienced in Frontend Architecture, Javascript, and Design Concepts.</p>
         <p className={styles.details}>
           Download my resume{" "}
-          <a className={styles.secondaryText} href="https://drive.google.com/uc?export=download&id=1BvTfm1kkoVjsJvAg8Wm4P-lFViE5bg1n" target="_blank">
+          <a className={styles.secondaryText} href="https://drive.google.com/uc?export=download&id=1-TpekCAqlwsZe-ZJSE8IWMtzrayEDQ8W" target="_blank">
             here
           </a>
         </p>
