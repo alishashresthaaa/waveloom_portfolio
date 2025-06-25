@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Mongoose } from "mongoose";
 
 const MONGODB_URI = process.env.MONGODB_URI!;
 
@@ -6,46 +6,25 @@ if (!MONGODB_URI) {
   throw new Error("Please define MONGODB_URI in .env.local");
 }
 
-let cached = (global as any).mongoose || { conn: null, promise: null };
+declare global {
+  var mongoose: {
+    conn: Mongoose | null;
+    promise: Promise<Mongoose> | null;
+  };
+}
 
-export async function connectToDatabase() {
-  if (cached.conn) return cached.conn;
+// Initialize global mongoose cache if not already set
+globalThis.mongoose ||= { conn: null, promise: null };
 
-  if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGODB_URI, {
+export async function connectToDatabase(): Promise<Mongoose> {
+  if (globalThis.mongoose.conn) return globalThis.mongoose.conn;
+
+  if (!globalThis.mongoose.promise) {
+    globalThis.mongoose.promise = mongoose.connect(MONGODB_URI, {
       bufferCommands: false,
     });
   }
 
-  cached.conn = await cached.promise;
-  return cached.conn;
+  globalThis.mongoose.conn = await globalThis.mongoose.promise;
+  return globalThis.mongoose.conn;
 }
-
-// import mongoose from "mongoose";
-
-// const MONGODB_URI = process.env.MONGODB_URI!;
-
-// if (!MONGODB_URI) {
-//   throw new Error("Please define MONGODB_URI in .env.local");
-// }
-
-// // Module-scoped cache variables
-// let conn: typeof mongoose | null = null;
-// let promise: Promise<typeof mongoose> | null = null;
-
-// export async function connectToDatabase() {
-//   try {
-//     if (conn) return conn;
-
-//     if (!promise) {
-//       promise = mongoose.connect(MONGODB_URI, {
-//         bufferCommands: false,
-//       });
-//     }
-//     conn = await promise;
-//     console.log("Connected to MongoDB successfully");
-//     return conn;
-//   } catch (error) {
-//     throw new Error("Failed to connect to the database");
-//   }
-// }

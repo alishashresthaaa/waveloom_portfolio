@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { connectToDatabase } from "../../lib/mongodb";
-// import Project from "../../models/project";
 import mongoose from "mongoose";
 
 const ProjectSchema = new mongoose.Schema({
@@ -14,9 +13,7 @@ function getProjectModel() {
 }
 
 export async function GET() {
-  console.log("GET request received for projects");
   try {
-    console.log("Fetching projects from the database...");
     await connectToDatabase();
     const Project = getProjectModel();
     const projects = await Project.find();
