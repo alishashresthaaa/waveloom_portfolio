@@ -1,33 +1,60 @@
 import Image from "next/image";
 import styles from "./main.module.css";
-import { myWorks, techStacks } from "../constants";
+import { myWorks, techStacks, ourTeam } from "../constants";
 
 interface MainComponentProps {
   aboutMeRef: React.RefObject<HTMLDivElement>;
+  ourTeamRef: React.RefObject<HTMLDivElement>;
   techStackRef: React.RefObject<HTMLDivElement>;
   myWorksRef: React.RefObject<HTMLDivElement>;
   contactRef: React.RefObject<HTMLDivElement>;
 }
 
 const MainComponent = (props: MainComponentProps) => {
-  const { aboutMeRef, techStackRef, myWorksRef, contactRef } = props;
+  const { aboutMeRef, ourTeamRef, techStackRef, myWorksRef, contactRef } = props;
 
   return (
     <>
       <div className={styles.container} ref={aboutMeRef}>
-        <h3 className={styles.title}>What I do</h3>
+        <h3 className={styles.title}>What We Do</h3>
         <p className={styles.subtitle}>
-          I`ve been coding for 3 years now and working as a <b>Frontend Developer who focuses on Frontend Architecture, Web Development, & Design Practices.</b>
+          The company, founded in 2019, worked for years to establish itself in the full-stack software development industry, but it wasn't until 2022 that its breakthrough came. This occurred as they developed their <b>SmartStack</b> architecture - an innovative infrastructure-as-code framework that automatically optimizes application deployment based on real-time performance analytics and cost metrics
         </p>
-        <p className={styles.subtitle}>I am a team player, design enthusiast and like building user centric applications. I am always looking for new opportunities to learn and grow.</p>
-        {/* <p className={styles.subtitle}>
-          Currently, I am working on <b>Python, Django, Backend Development, and other similar subjects.</b>
-        </p> */}
+        <div className={styles.subtitle}>
+          <b>Waveloom</b> is a full-stack software development company that specializes in building scalable and efficient web applications. We are passionate about creating innovative solutions that solve real-world problems.
+        </div>
+      </div>
+
+      <div className={`${styles.container} ${styles.myWorks}`} ref={ourTeamRef}>
+        <h3 className={styles.title}>Our Team</h3>
+        <p className={styles.subtitle}>We are a team of passionate developers, designers, and project managers who are dedicated to delivering high-quality software solutions. Our team is made up of individuals with diverse backgrounds and skill sets, allowing us to tackle complex challenges and deliver exceptional results.</p>
+        <div className="icons-flex">
+          {ourTeam.map((work, index) => (
+            <div key={work.linkedin || work.name} className={styles.workContainer}>
+              <a href={work.linkedin} target="_blank" rel="noopener noreferrer" className={styles.workImageContainer}>
+                <Image src={work.image} alt={work.name} className={styles.workImage} width={500} height={350} style={{ height: "350px" }} />
+              </a>
+              <div className={styles.workDetails}>
+                <h4 className={styles.workTitle}>
+                  <span className={styles.workIndex}>#{index + 1 > 9 ? index + 1 : `0${index + 1}`} </span>
+                  {work.name}
+                </h4>
+                <div className={styles.workStacks}>
+                  <span>{work.role}</span>
+                </div>
+                <p className={styles.workDescription}>{work.description}</p>
+                <a href={work.linkedin} target="_blank" rel="noopener noreferrer" className={styles.linkBtn}>
+                  View on Linkedin
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className={styles.container} ref={techStackRef}>
-        <h3 className={styles.title}>My Tech Stacks</h3>
-        <p className={styles.subtitle}>Mastery is achieved through curiosity and persistence. I thrive on exploring new technologies and perfecting the ones I use daily.</p>
+        <h3 className={styles.title}>Our Tech Stacks</h3>
+        <p className={styles.subtitle}>Mastery is achieved through curiosity and persistence.We thrive on exploring new technologies and perfecting the ones we use daily.</p>
         <div className="icons-flex">
           {techStacks.map((tech) => (
             <Image key={tech.alt} src={tech.src} alt={tech.alt} className={styles.techIcons} />
@@ -36,8 +63,8 @@ const MainComponent = (props: MainComponentProps) => {
       </div>
 
       <div className={`${styles.container} ${styles.myWorks}`} ref={myWorksRef}>
-        <h3 className={styles.title}>Some of my works</h3>
-        <p className={styles.subtitle}>I believe that you learn the most when you code for fun and not for knowledge. Check out some of the works that I have done.</p>
+        <h3 className={styles.title}>Some of our works</h3>
+        <p className={styles.subtitle}>We have worked on a variety of projects, ranging from small web applications to large-scale enterprise solutions. Here are some of our notable works.</p>
         <div className={styles.workList}>
           {myWorks.map((work, index) => (
             <div key={work.title} className={styles.workContainer}>

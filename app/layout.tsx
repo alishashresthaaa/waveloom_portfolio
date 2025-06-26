@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Alisha Shrestha",
-  description: "A portfolio website for Alisha Shrestha.",
+  title: "Waveloom",
+  description: "A portfolio website for Waveloom.",
   icons: {
     icon: "/favicon.ico",
   },
