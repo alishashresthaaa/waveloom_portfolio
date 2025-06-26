@@ -1,44 +1,32 @@
+import email from "@/app/icons/email.png";
+import linkedin from "@/app/icons/linkedin.png";
 import Image from "next/image";
 import styles from "./about.module.css";
-import linkedin from "@/app/icons/linkedin.png";
-import github from "@/app/icons/github.png";
-import email from "@/app/icons/email.png";
-import code from "@/app/icons/code.png";
+import logo from "@/app/icons/logo.svg";
 
 const About = () => {
   return (
     <>
-      <h1 className={styles.logo}>A.</h1>
+      <Image src={logo} alt="Logo" className={styles.logo} />
       <div className={styles.about}>
-        <h3 className={styles.subtitle}>Hello there, I am</h3>
+        <h3 className={styles.subtitle}>Hello there, We are</h3>
         <h1 className={styles.title}>
-          <span className={styles.light}>Alisha</span>
-          <span className={styles.secondary}>Shrestha.</span>
+          <span className={styles.light}>Waveloom</span> <br />
+          <span className={styles.secondary}></span>
         </h1>
         <p className={styles.details}>
-          <span className={styles.quote}>Thank you!</span> For finding me here.
+          <span className={styles.quote}>Thank you!</span> For finding us here.
         </p>
-        <p className={styles.details}>Highly motivated towards Frontend Development.</p>
-        <p className={styles.details}>Experienced in Frontend Architecture, Javascript, and Design Concepts.</p>
+        <p className={styles.details}> By combining infrastructure automation with continuous performance analysis, Waveloom created a system where applications dynamically adjust their own hosting requirements without human intervention.</p>
         <p className={styles.details}>
-          Download my resume{" "}
-          <a className={styles.secondaryText} href="https://drive.google.com/uc?export=download&id=1-TpekCAqlwsZe-ZJSE8IWMtzrayEDQ8W" target="_blank">
-            here
-          </a>
+          <span className={styles.quote}>We are</span> a team of passionate developers who love to create beautiful and functional web applications. We believe in the power of technology to solve real-world problems and make life easier for everyone.{" "}
         </p>
-
         <div className={styles.divider}></div>
         <div className={styles.icons}>
-          <a href="https://www.linkedin.com/in/alishashrestha/" target="_blank">
+          <a href="https://www.linkedin.com/" target="_blank">
             <Image src={linkedin} alt="Linkedin" />
           </a>
-          <a href="https://github.com/alishashresthaaa" target="_blank">
-            <Image src={github} alt="Github" />
-          </a>
-          <a href="https://leetcode.com/u/alishashrestha/" target="_blank">
-            <Image src={code} alt="Leetcode" />
-          </a>
-          <a href="mailto:alishashresthaaa0@gmail.com">
+          <a href="mailto:waveloom@gmail.com">
             <Image src={email} alt="Email" />
           </a>
         </div>

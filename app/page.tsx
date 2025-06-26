@@ -9,6 +9,7 @@ export const runtime = "edge";
 
 export default function Home() {
   const aboutMeRef = useRef<HTMLDivElement>(null);
+  const ourTeamRef = useRef<HTMLDivElement>(null);
   const techStackRef = useRef<HTMLDivElement>(null);
   const myWorksRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
@@ -19,10 +20,10 @@ export default function Home() {
         <About />
       </section>
       <section className={styles.center__section}>
-        <MainComponent aboutMeRef={aboutMeRef} techStackRef={techStackRef} myWorksRef={myWorksRef} contactRef={contactRef} />
+        <MainComponent ourTeamRef={ourTeamRef} aboutMeRef={aboutMeRef} techStackRef={techStackRef} myWorksRef={myWorksRef} contactRef={contactRef} />
       </section>
       <section className={styles.right__section}>
-        <Nav aboutMeRef={aboutMeRef} techStackRef={techStackRef} myWorksRef={myWorksRef} contactRef={contactRef} />
+        <Nav ourTeamRef={ourTeamRef} aboutMeRef={aboutMeRef} techStackRef={techStackRef} myWorksRef={myWorksRef} contactRef={contactRef} />
       </section>
     </main>
   );
