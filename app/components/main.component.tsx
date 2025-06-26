@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Image from "next/image";
 import styles from "./main.module.css";
 import { myWorks, techStacks, ourTeam } from "../constants";
@@ -13,11 +14,24 @@ interface MainComponentProps {
 const MainComponent = (props: MainComponentProps) => {
   const { aboutMeRef, ourTeamRef, techStackRef, myWorksRef, contactRef } = props;
 
+  useEffect(() => {
+    // Fetch projects from your API when the component mounts
+    fetch("/api/projects")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Projects from API:", data);
+      })
+      .catch((err) => {
+        console.error("Error fetching projects:", err);
+      });
+  }, []);
+
   return (
     <>
       <div className={styles.container} ref={aboutMeRef}>
         <h3 className={styles.title}>What We Do</h3>
         <p className={styles.subtitle}>
+<<<<<<< HEAD
           The company, founded in 2019, worked for years to establish itself in the full-stack software development industry, but it wasn't until 2022 that its breakthrough came. This occurred as they developed their <b>SmartStack</b> architecture - an innovative infrastructure-as-code framework that automatically optimizes application deployment based on real-time performance analytics and cost metrics
         </p>
         <div className={styles.subtitle}>
@@ -55,25 +69,75 @@ const MainComponent = (props: MainComponentProps) => {
       <div className={styles.container} ref={techStackRef}>
         <h3 className={styles.title}>Our Tech Stacks</h3>
         <p className={styles.subtitle}>Mastery is achieved through curiosity and persistence.We thrive on exploring new technologies and perfecting the ones we use daily.</p>
+=======
+          I`ve been coding for 3 years now and working as a{" "}
+          <b>
+            Frontend Developer who focuses on Frontend Architecture, Web
+            Development, & Design Practices.
+          </b>
+        </p>
+        <p className={styles.subtitle}>
+          I am a team player, design enthusiast and like building user centric
+          applications. I am always looking for new opportunities to learn and
+          grow.
+        </p>
+        {/* <p className={styles.subtitle}>
+          Currently, I am working on <b>Python, Django, Backend Development, and other similar subjects.</b>
+        </p> */}
+      </div>
+
+      <div className={styles.container} ref={techStackRef}>
+        <h3 className={styles.title}>My Tech Stacks</h3>
+        <p className={styles.subtitle}>
+          Mastery is achieved through curiosity and persistence. I thrive on
+          exploring new technologies and perfecting the ones I use daily.
+        </p>
+>>>>>>> 0db88987d910f0b88816a4d8deeb77f058e792a2
         <div className="icons-flex">
           {techStacks.map((tech) => (
-            <Image key={tech.alt} src={tech.src} alt={tech.alt} className={styles.techIcons} />
+            <Image
+              key={tech.alt}
+              src={tech.src}
+              alt={tech.alt}
+              className={styles.techIcons}
+            />
           ))}
         </div>
       </div>
 
       <div className={`${styles.container} ${styles.myWorks}`} ref={myWorksRef}>
+<<<<<<< HEAD
         <h3 className={styles.title}>Some of our works</h3>
         <p className={styles.subtitle}>We have worked on a variety of projects, ranging from small web applications to large-scale enterprise solutions. Here are some of our notable works.</p>
+=======
+        <h3 className={styles.title}>Some of my works</h3>
+        <p className={styles.subtitle}>
+          I believe that you learn the most when you code for fun and not for
+          knowledge. Check out some of the works that I have done.
+        </p>
+>>>>>>> 0db88987d910f0b88816a4d8deeb77f058e792a2
         <div className={styles.workList}>
           {myWorks.map((work, index) => (
             <div key={work.title} className={styles.workContainer}>
-              <a href={work.websiteLink} target="_blank" rel="noopener noreferrer" className={styles.workImageContainer}>
-                <Image src={work.image} alt={work.title} className={styles.workImage} width={1000} height={1000} />
+              <a
+                href={work.websiteLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.workImageContainer}
+              >
+                <Image
+                  src={work.image}
+                  alt={work.title}
+                  className={styles.workImage}
+                  width={1000}
+                  height={1000}
+                />
               </a>
               <div className={styles.workDetails}>
                 <h4 className={styles.workTitle}>
-                  <span className={styles.workIndex}>#{index + 1 > 9 ? index + 1 : `0${index + 1}`} </span>
+                  <span className={styles.workIndex}>
+                    #{index + 1 > 9 ? index + 1 : `0${index + 1}`}{" "}
+                  </span>
                   {work.title}
                 </h4>
                 <div className={styles.workStacks}>
@@ -82,7 +146,12 @@ const MainComponent = (props: MainComponentProps) => {
                   ))}
                 </div>
                 <p className={styles.workDescription}>{work.description}</p>
-                <a href={work.link} target="_blank" rel="noopener noreferrer" className={styles.linkBtn}>
+                <a
+                  href={work.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.linkBtn}
+                >
                   View on Github
                 </a>
               </div>
@@ -94,8 +163,12 @@ const MainComponent = (props: MainComponentProps) => {
       <div className={styles.container} ref={contactRef}>
         <h3 className={styles.title}>Get in touch</h3>
         <p className={styles.subtitle}>
-          I like talking to people with similar interests. Coding, music, sitcoms, or random stuff. So feel free to send me an{" "}
-          <a href="mailto:alishashresthaaa0@gmail.com" className={styles.secondaryText}>
+          I like talking to people with similar interests. Coding, music,
+          sitcoms, or random stuff. So feel free to send me an{" "}
+          <a
+            href="mailto:alishashresthaaa0@gmail.com"
+            className={styles.secondaryText}
+          >
             email.
           </a>
         </p>
