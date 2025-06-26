@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./main.module.css";
 import { myWorks, techStacks } from "../constants";
+import { useState } from "react";
 
 interface MainComponentProps {
   aboutMeRef: React.RefObject<HTMLDivElement>;
@@ -11,6 +12,45 @@ interface MainComponentProps {
 
 const MainComponent = (props: MainComponentProps) => {
   const { aboutMeRef, techStackRef, myWorksRef, contactRef } = props;
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    
+    const formData = new FormData(event.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+    setName(data.name as string);
+    setEmail(data.email as string);
+    setMessage(data.message as string);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      console.log("Response from server:", response);
+      
+      if (!response.ok) {
+        console.error("Network response was not ok:", response.statusText);
+        throw new Error("Network response was not ok");
+      }
+
+      alert("Message sent successfully!");
+      clearForm();
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert("There was an error sending your message. Please try again later.");
+    }
+  }
+  const clearForm = () => {
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
 
   return (
     <>
@@ -65,13 +105,39 @@ const MainComponent = (props: MainComponentProps) => {
       </div>
 
       <div className={styles.container} ref={contactRef}>
-        <h3 className={styles.title}>Get in touch</h3>
+        <h3 className={styles.title}>Build with us</h3>
         <p className={styles.subtitle}>
-          I like talking to people with similar interests. Coding, music, sitcoms, or random stuff. So feel free to send me an{" "}
-          <a href="mailto:alishashresthaaa0@gmail.com" className={styles.secondaryText}>
-            email.
-          </a>
+          Change your vision into reality. If you have an idea or a project in mind, We would love to hear about it. Let’s collaborate and create something amazing together!
         </p>
+        <form className={styles.contactForm} onSubmit={handleSubmit} method="POST">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={name}
+            onChange={e => setName(e.target.value)}
+            required
+            className={styles.inputField}
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            required
+            className={styles.inputField}
+          />
+          <textarea
+            name="message"
+            placeholder="Your Idea"
+            value={message}
+            onChange={e => setMessage(e.target.value)}
+            required
+            className={styles.textareaField}
+          ></textarea>
+          <button type="submit" className={styles.submitBtn}>Send Message</button>
+        </form>
       </div>
     </>
   );
