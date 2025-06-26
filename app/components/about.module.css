@@ -103,9 +103,9 @@
 }
 
 .logo {
-  font-size: 72px;
-  color: var(--secondary-color);
-  font-weight: 700;
+  width: 120px;
+  height: auto;
+  margin-bottom: 10px;
   position: absolute;
   top: 5%;
   cursor: pointer;
