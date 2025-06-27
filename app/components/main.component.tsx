@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./main.module.css";
 import { myWorks, techStacks, ourTeam } from "../constants";
+import { ShimmerDiv } from "shimmer-effects-react";
+import { ClipLoader } from "react-spinners";
 
 interface MainComponentProps {
   aboutMeRef: React.RefObject<HTMLDivElement>;
@@ -16,19 +18,24 @@ const MainComponent = (props: MainComponentProps) => {
     props;
 
   const [projects, setProjects] = useState<any[]>([]);
-
+  const [projectsLoading, setProjectsLoading] = useState(true);
   useEffect(() => {
     // Fetch projects from your API when the component mounts
     fetch("/api/projects")
       .then((res) => res.json())
       .then((data) => {
         setProjects(data);
+        setProjectsLoading(false);
         console.log("Projects from API:", data);
       })
       .catch((err) => {
+        setProjectsLoading(false);
         console.error("Error fetching projects:", err);
       });
   }, []);
+
+  
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -169,8 +176,8 @@ const MainComponent = (props: MainComponentProps) => {
           applications to large-scale enterprise solutions. Here are some of our
           notable works.
         </p>
-        <div className={styles.workList}>
-          {projects.map((work, index) => (
+        <div className={styles.workList} style={{ width: "100%" }}>
+          {!projectsLoading?projects.map((work, index) => (
             <div key={work._id || work.title} className={styles.workContainer}>
               <div className={styles.workImageContainer}>
                 <Image
@@ -197,7 +204,16 @@ const MainComponent = (props: MainComponentProps) => {
                 {/* If you have a link field, you can add a button here */}
               </div>
             </div>
-          ))}
+          )):
+            <div className="test" style={{display: "flex", width: "100%", justifyContent: "center", alignItems: "center"}}>
+            <ClipLoader
+              color="#36d7b7"
+              size={100}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
+            </div>
+          }
           {/* {myWorks.map((work, index) => (
             <div key={work.title} className={styles.workContainer}>
               <a

@@ -15,7 +15,10 @@
     "next": "15.3.3",
     "nodemailer": "^7.0.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-spinners": "^0.17.0",
+    "shimmer": "^1.2.1",
+    "shimmer-effects-react": "^1.0.4"
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.13.5",
