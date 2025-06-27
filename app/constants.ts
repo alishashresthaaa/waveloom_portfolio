@@ -25,10 +25,18 @@ export const techStacks: Array<{ src: string; alt: string }> = [
   { src: git, alt: "Git" },
 ];
 
-export const myWorks: Array<{ title: string; description: string; link: string; image: string; stacks: Array<string>; websiteLink?: string }> = [
+export const myWorks: Array<{
+  title: string;
+  description: string;
+  link: string;
+  image: string;
+  stacks: Array<string>;
+  websiteLink?: string;
+}> = [
   {
     title: "Website",
-    description: "A static ecommerce website that showcase the cart functionality",
+    description:
+      "A static ecommerce website that showcase the cart functionality",
     link: "https://github.com/alishashresthaaa/static-ecommerce-website",
     image: mytunes.src,
     stacks: ["HTML", "SCSS", "Javascript", "Jquery"],
@@ -36,33 +44,47 @@ export const myWorks: Array<{ title: string; description: string; link: string; 
   },
 ];
 
-export const ourTeam: Array<{ name: string; role: string; image: string; linkedin: string; description: string }> = [
+export const ourTeam: Array<{
+  name: string;
+  role: string;
+  image: string;
+  linkedin: string;
+  description: string;
+}> = [
   {
     name: "Alisha Shrestha",
     role: "Frontend Developer",
-    image: nigam.src,
-    linkedin: "https://www.linkedin.com/in/alisha-shrestha-0a1b1a1b6/",
-    description: "A passionate frontend developer with a keen interest in building user-friendly web applications.",
+    image:
+      "https://www.shutterstock.com/image-vector/portrait-young-beautiful-hipster-asian-600nw-1562341102.jpg",
+    linkedin: "https://www.linkedin.com/in/alishashrestha/",
+    description:
+      "A passionate frontend developer with a keen interest in building user-friendly web applications.",
   },
   {
     name: "Nigam Bhattarai",
     role: "Backend Developer",
-    image: nigam.src,
-    linkedin: "https://www.linkedin.com/in/sanjay-kumar-0a1b1a1b6/",
-    description: "A dedicated backend developer who loves to create efficient and scalable server-side applications.",
+    image:
+      "https://st2.depositphotos.com/2703645/7303/v/450/depositphotos_73039841-stock-illustration-male-avatar-icon.jpg",
+    linkedin: "https://www.linkedin.com/in/nigambhattarai/",
+    description:
+      "A dedicated backend developer who loves to create efficient and scalable server-side applications.",
   },
   {
     name: "Sandip Moktan",
     role: "QA Engineer",
-    image: nigam.src,
-    linkedin: "https://www.linkedin.com/in/sandip-qa-profile/",
-    description: "Detail-oriented QA engineer ensuring product quality and seamless user experience through rigorous testing.",
+    image:
+      "https://st2.depositphotos.com/2703645/7303/v/450/depositphotos_73039841-stock-illustration-male-avatar-icon.jpg",
+    linkedin: "https://www.linkedin.com/in/sandip-moktan-608248190/",
+    description:
+      "Detail-oriented QA engineer ensuring product quality and seamless user experience through rigorous testing.",
   },
   {
     name: "Prachan Ghale",
     role: "Mobile App Developer",
-    image: nigam.src,
-    linkedin: "https://www.linkedin.com/in/prachan-mobiledev/",
-    description: "Innovative mobile app developer focused on creating responsive and user-centric mobile applications.",
+    image:
+      "https://st2.depositphotos.com/2703645/7303/v/450/depositphotos_73039841-stock-illustration-male-avatar-icon.jpg",
+    linkedin: "https://www.linkedin.com/in/prachan-ghale/",
+    description:
+      "Innovative mobile app developer focused on creating responsive and user-centric mobile applications.",
   },
 ];
